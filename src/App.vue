@@ -1,15 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <sp-dropdown
+      :title=title
+      :list=list
+    />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SpDropdown from './components/SpDropdown.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      title: 'Seciniz',
+      list: [
+        {
+          value: 1313123,
+          title: 'Mercedes'
+        },
+        {
+          value: 2424242,
+          title: 'Audi'
+        },
+        {
+          value: 3445465,
+          title: 'Seat'
+        },
+        {
+          value: 6756454,
+          title: 'Suzuki'
+        }
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    SpDropdown
   }
 }
 </script>
@@ -19,8 +46,15 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.container {
+    width: 768px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px #ddd;
+    min-height: 400px;
 }
 </style>
