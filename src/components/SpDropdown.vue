@@ -9,7 +9,7 @@
           v-for="item in list"
           :key="item.value"
           :data-id="item.value"
-          @click="select(item)">
+          @click="changeSelected(item)">
           {{ item.title }}
         </li>
       </ul>
@@ -34,7 +34,8 @@ export default {
     changeStatus() {
       this.status = !this.status;
     },
-    select(item) {
+    changeSelected(item) {
+      this.$emit('onSelected', item);
       this.selected = item;
       this.changeStatus();
     }

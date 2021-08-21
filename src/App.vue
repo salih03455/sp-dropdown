@@ -3,6 +3,7 @@
     <sp-dropdown
       :title=title
       :list=list
+      @onSelected="getSelected"
     />
     <div>asdasdasdasd asdasdd asdasdasd asdsad</div>
   </div>
@@ -15,11 +16,11 @@ export default {
   name: 'App',
   data() {
     return {
-      title: 'Seciniz',
+      title: 'Choose Auto',
       list: [
         {
           value: 1313123,
-          title: 'Mercedes'
+          title: '<b>Mercedes</b>'
         },
         {
           value: 2424242,
@@ -33,11 +34,18 @@ export default {
           value: 6756454,
           title: 'Suzuki'
         }
-      ]
+      ],
+      selectedItem: null
     }
   },
   components: {
     SpDropdown
+  },
+  methods: {
+    getSelected(selectedItem) {
+      this.selectedItem = selectedItem;
+      console.log(this.selectedItem);
+    }
   }
 }
 </script>
