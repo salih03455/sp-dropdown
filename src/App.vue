@@ -20,19 +20,19 @@ export default {
       list: [
         {
           value: 1313123,
-          title: '<b>Mercedes</b>'
+          title: 'Mercedes &#128512;'
         },
         {
           value: 2424242,
-          title: 'Audi'
+          title: 'Audi &#128513;'
         },
         {
           value: 3445465,
-          title: 'Seat'
+          title: 'Seat &#128514; <b>(My Binek)</b>'
         },
         {
           value: 6756454,
-          title: 'Suzuki'
+          title: 'Suzuki &#128519;'
         }
       ],
       selectedItem: null
