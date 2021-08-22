@@ -1,7 +1,7 @@
 <template>
   <div :class="['sp-dropdown', { active: status }]">
     <div class="sp-dropdown-title" @click="changeStatus()">
-      {{ selected ? selected.title : title }} <i />
+      <span v-html="selected ? selected.title : title"></span> <i />
     </div>
     <div class="sp-dropdown-content">
       <ul>
@@ -10,7 +10,7 @@
           :key="item.value"
           :data-id="item.value"
           @click="changeSelected(item)">
-          {{ item.title }}
+          <div v-html="item.title"></div>
         </li>
       </ul>
     </div>

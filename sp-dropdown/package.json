@@ -1,7 +1,9 @@
 {
   "name": "sp-dropdown",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.3",
+  "license": "MIT",
+  "keywords": ["vue", "dropdown", "vue js", "menu"],
+  "description": "Simple dropdown builder for vue js",
   "main": "dist/sp-dropdown.ssr.js",
   "browser": "dist/sp-dropdown.esm.js",
   "module": "dist/sp-dropdown.esm.js",

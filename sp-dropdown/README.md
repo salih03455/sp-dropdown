@@ -1,5 +1,11 @@
 # sp-dropdown
 
+## Description
+
+It is a simple dropdown builder for vue js
+
+<hr>
+
 ## Installation
 
 ```
@@ -50,4 +56,26 @@ export default {
   }
 }
 </script>
+```
+
+<hr>
+
+### Get Selected Value
+
+You can get the value of the selected item with "onSelected custom event"
+
+```js
+<sp-dropdown
+  :title=title
+  :list=list
+  @onSelected="getSelected"
+/>
+```
+
+```js
+methods: {
+    getSelected(selectedItem) {
+      console.log(this.selectedItem);
+    }
+  }
 ```
