@@ -12,22 +12,32 @@ export default defineComponent({
       title: 'dinleyin beni develer',
       list: [
         {
-          title: 'Salih',
-          value: 123434
+          value: 1313123,
+          title: 'Mercedes &#128512;'
         },
         {
-          title: 'Maho',
-          value: 343556
+          value: 2424242,
+          title: 'Audi &#128513;'
         },
         {
-          title: 'Hamza',
-          value: 345890
+          value: 3445465,
+          title: 'Seat &#128514; <b>(My Binek)</b>'
         },
         {
-          title: 'Cevdet',
-          value: 876543
+          value: 6756454,
+          title: 'Suzuki &#128519;'
         }
-      ]
+      ],
+      selectedItem: null,
+      config: {
+        outside: true
+      }
+    }
+  },
+  methods: {
+    getSelected(selectedItem) {
+      this.selectedItem = selectedItem;
+      console.log(this.selectedItem);
     }
   }
 });
@@ -35,6 +45,11 @@ export default defineComponent({
 
 <template>
   <div id="app">
-    <sp-dropdown :title=title :list=list />
+    <sp-dropdown
+      :title=title
+      :list=list
+      :config=config
+      @onSelected="getSelected"
+    />
   </div>
 </template>

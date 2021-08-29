@@ -3,6 +3,7 @@
     <sp-dropdown
       :title=title
       :list=list
+      :config=config
       @onSelected="getSelected"
     />
     <div>asdasdasdasd asdasdd asdasdasd asdsad</div>
@@ -35,7 +36,10 @@ export default {
           title: 'Suzuki &#128519;'
         }
       ],
-      selectedItem: null
+      selectedItem: null,
+      config: {
+        outside: true
+      }
     }
   },
   components: {
