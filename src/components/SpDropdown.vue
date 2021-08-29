@@ -1,5 +1,6 @@
 <template>
-  <div :class="['sp-dropdown', { active: status }]">
+  <div
+    :class="['sp-dropdown', { active: status }]">
     <div class="sp-dropdown-title" @click="changeStatus()">
       <span v-html="selected ? selected.title : title"></span> <i />
     </div>
@@ -28,7 +29,8 @@ export default {
   },
   props: {
     title: String,
-    list: Array
+    list: Array,
+    config: Object
   },
   methods: {
     changeStatus() {
@@ -39,11 +41,20 @@ export default {
       this.selected = item;
       this.changeStatus();
     }
+  },
+  created() {
+    const ths = this;
+    document.addEventListener('click', e => {
+      if (!document.querySelector('.sp-dropdown').contains(e.target)) {
+        if (ths.config?.outside) this.status = false
+      }
+    });
   }
 }
+
 </script>
 
-<style>
+<style scoped>
   .sp-dropdown {
     display: flex;
     flex-direction: column;
